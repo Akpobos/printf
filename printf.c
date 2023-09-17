@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 			if (f)
 				prtd += f(args, buffer, &buf_len);
 			else
-				prtd += add_to_buffer(*format, buffer, &buf_len);
+				prtd += fmt_normal(*format, buffer, &buf_len);
 			format++;
 			continue;
 		}

@@ -59,6 +59,9 @@ int prnt_uint(va_list args, char *buffer, unsigned int *buf_len);
 
 /* Numbers */
 
+/* string_utils.c */
+int fmt_normal(char c, char *buffer, unsigned int *buf_len);
+
 /* num_utils.c */
 int _abs(int num);
 int fmt_int(unsigned int num, char *buffer, unsigned int *buf_len);
