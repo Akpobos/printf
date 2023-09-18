@@ -55,7 +55,10 @@ int prnt_custom_string(va_list args, char *buffer, unsigned int *buf_len)
 			i += add_to_buffer('\\', buffer, buf_len);
 			i += add_to_buffer('x', buffer, buf_len);
 			i += add_to_buffer('0', buffer, buf_len);
-			i += fmt_base_from_10(16, 1, *str, buffer, buf_len);
+			if (*str == 0)
+				i += add_to_buffer('0', buffer, buf_len);
+			else
+				i += fmt_base_from_10(16, 1, *str, buffer, buf_len);
 		}
 		else
 			i += add_to_buffer(*str, buffer, buf_len);
