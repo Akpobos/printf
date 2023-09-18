@@ -22,7 +22,6 @@ int _printf(const char *format, ...)
 			int (*f)(va_list args, char *buffer, unsigned int *buf_len);
 
 			format++;
-			format += clear_space(format);
 			f = get_op_func(*format);
 			if (f)
 				prtd += f(args, buffer, &buf_len);
