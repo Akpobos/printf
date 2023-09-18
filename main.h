@@ -61,6 +61,7 @@ int prnt_uint(va_list args, char *buffer, unsigned int *buf_len);
 
 /* string_utils.c */
 int fmt_normal(char c, char *buffer, unsigned int *buf_len);
+int clear_space(const char *str);
 
 /* num_utils.c */
 int _abs(int num);

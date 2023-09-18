@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 	int prtd = 0;
 	va_list args;
 
-	if (!format)
+	if (!format || *format == '\0')
 		return (-1);
 	va_start(args, format);
 	while (*format)
@@ -22,6 +22,7 @@ int _printf(const char *format, ...)
 			int (*f)(va_list args, char *buffer, unsigned int *buf_len);
 
 			format++;
+			format += clear_space(format);
 			f = get_op_func(*format);
 			if (f)
 				prtd += f(args, buffer, &buf_len);
