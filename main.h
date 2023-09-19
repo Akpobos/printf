@@ -55,9 +55,9 @@ int prnt_hex_upper(va_list args, char *buffer, unsigned int *buf_len);
 
 /* num_ops_2.c */
 int prnt_uint(va_list args, char *buffer, unsigned int *buf_len);
-
-/*prnt_ptr.c*/
 int prnt_ptr(va_list args, char *buffer, unsigned int *buf_len);
+
+
 /* UTILS - START */
 
 /* Numbers */
@@ -76,6 +76,7 @@ int fmt_base_from_10(
 		char *buffer,
 		unsigned int *buf_len
 		);
+int fmt_ptrs(uintptr_t num, char *buffer, unsigned int *buf_len);
 
 /* UTILS - END */
 
