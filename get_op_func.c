@@ -17,11 +17,12 @@ int (*get_op_func(char c))(va_list args, char *buffer, unsigned int *buf_len)
 		{ 'o', prnt_octal },
 		{ 'x', prnt_hex_lower },
 		{ 'X', prnt_hex_upper },
-		{ 'u', prnt_uint }
+		{ 'u', prnt_uint },
+		{'p', prnt_ptr },
 	};
 	unsigned int i;
 
-	for (i = 0; i < 10; i++)
+	for (i = 0; i < 11; i++)
 	{
 		if (ops[i].fmt == c)
 			return (ops[i].f);
