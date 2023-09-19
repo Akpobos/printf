@@ -17,6 +17,12 @@ int prnt_int(va_list args, char *buffer, unsigned int *buf_len)
 		c += add_to_buffer('-', buffer, buf_len);
 		num = _abs(num);
 	}
+	else if (*buf_len > 0)
+		c += add_to_buffer('+', buffer, buf_len);
+
+	else if (*buf_len > 0)
+		c += add_to_buffer(' ', buffer, buf_len);
+
 	c += fmt_int((unsigned int)num, buffer, buf_len);
 	return (c);
 }
@@ -72,9 +78,16 @@ int prnt_hex_lower(va_list args, char *buffer, unsigned int *buf_len)
 	unsigned int num = va_arg(args, unsigned int);
 
 	if (num == 0)
-		c += add_to_buffer('0', buffer, buf_len);
+	{
+		if (*buf_len > 0)
+			c += add_to_buffer('0', buffer, buf_len);
+	}
 	else
+	{
+		c += add_to_buffer('0', buffer, buf_len);
+		c += add_to_buffer('x', buffer, buf_len);
 		c += fmt_base_from_10(16, 0, num, buffer, buf_len);
+	}
 	return (c);
 }
 
@@ -91,8 +104,15 @@ int prnt_hex_upper(va_list args, char *buffer, unsigned int *buf_len)
 	unsigned int num = va_arg(args, unsigned int);
 
 	if (num == 0)
-		c += add_to_buffer('0', buffer, buf_len);
+	{
+		if (*buf_len > 0)
+			c += add_to_buffer('0', buffer, buf_len);
+	}
 	else
+	{
+		c += add_to_buffer('0', buffer, buf_len);
+		c += add_to_buffer('X', buffer, buf_len);
 		c += fmt_base_from_10(16, 1, num, buffer, buf_len);
+	}
 	return (c);
 }
