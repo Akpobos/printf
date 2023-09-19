@@ -18,7 +18,7 @@ int (*get_op_func(char c))(va_list args, char *buffer, unsigned int *buf_len)
 		{ 'x', prnt_hex_lower },
 		{ 'X', prnt_hex_upper },
 		{ 'u', prnt_uint },
-		{'p', prnt_ptr }
+		{'p', prnt_ptr },
 	};
 	unsigned int i;
 
