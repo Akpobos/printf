@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdio.>
+#include <stdint.h>
 
 /**
  * prnt_ptr - prints pointer address
