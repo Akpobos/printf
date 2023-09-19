@@ -22,7 +22,7 @@ int (*get_op_func(char c))(va_list args, char *buffer, unsigned int *buf_len)
 	};
 	unsigned int i;
 
-	for (i = 0; i < 10; i++)
+	for (i = 0; i < 11; i++)
 	{
 		if (ops[i].fmt == c)
 			return (ops[i].f);
