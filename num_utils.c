@@ -72,3 +72,28 @@ int fmt_base_from_10(
 	i += add_to_buffer((mod + ascii_base), buffer, buf_len);
 	return (i);
 }
+
+/**
+ * fmt_ptrs - format pointers and prints integer to stdout
+ * @num: The number
+ * @buffer: Pointer to buffer
+ * @buf_len: Length of the buffer
+ * Return: Number of prints to std out
+ */
+int fmt_ptrs(uintptr_t num, char *buffer, unsigned int *buf_len)
+{
+	int i = 0;
+	uintptr_t ascii_base, div, mod;
+
+	div = num / 16;
+	mod = num % 16;
+	if (mod < 10)
+		ascii_base = 48;
+	else
+		ascii_base = 87;
+	if (num <= 0)
+		return (i);
+	i += fmt_ptrs(div, buffer, buf_len);
+	i += add_to_buffer((mod + ascii_base), buffer, buf_len);
+	return (i);
+}
