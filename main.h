@@ -55,6 +55,8 @@ int prnt_hex_upper(va_list args, char *buffer, unsigned int *buf_len);
 /* num_ops_2.c */
 int prnt_uint(va_list args, char *buffer, unsigned int *buf_len);
 
+/*prnt_ptr.c*/
+int prnt_ptr(va_list args, char *buffer, unsigned int *buf_len);
 /* UTILS - START */
 
 /* Numbers */
